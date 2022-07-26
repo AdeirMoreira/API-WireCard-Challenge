@@ -37,15 +37,16 @@ A API espera receber os seguinte dados em JSON:
 - data de expiração do cartão de credito(Se o pagamento for cartão de crédito)
 - código de verificação do cartão de crédito(Se o pagamento for cartão de crédito)
 
-O EndPoint de registro retorna o ID do pagamento e o status, caso seja por cartão de crédito, ou o ID do pagamento e o número do boleto, caso seja por boleto.
-
-O EndPoint do status retorna as informações do pagamento e seu status.
-
+Todos os dados são recebidos pela API minuciosamente chegados para verificar:
+- Se o id pertence a um cliente WireCard
+- Se o dados do comprador são válidos
+- Se o tipo de pagamento é boleto ou cartão de crédito
+- Se os dados do cartão de credito são válidos
 
 <h2 id="features">✔️ Features</h2>
 
 ## 👤 Registro de Pagamento
-EndPoint para cadastro de pagamentos à clientes WIRECARD previamente cadastrados e identificados pelo ID.
+EndPoint para cadastro de pagamentos à clientes WIRECARD previamente cadastrados e identificados pelo ID. Retorna o ID do pagamento e o status, caso seja por cartão de crédito, ou o ID do pagamento e o número do boleto, caso seja por boleto.
 
 ### CLIENTES E SEUS IDS
 
@@ -100,7 +101,7 @@ EndPoint para cadastro de pagamentos à clientes WIRECARD previamente cadastrado
 ~~~
 
 ## 🎙 Status de Pagamento
-Endpoint para consulta do status e informações sobre pagamento. Espera receber o Id e o tipo do pagamento.
+O Endpoint retorna as informações do pagamento e seu status. Espera receber o Id e o tipo do pagamento.
 #### 1. Requisição 
 ~~~JSON
 {
