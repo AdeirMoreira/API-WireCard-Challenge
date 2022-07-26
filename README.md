@@ -1,9 +1,9 @@
 <p>
 <a href="#sobre">Sobre</a> |
 <a href="#documentação">Documentação</a> |
+<a href="#tecnologias">Tecnologias</a> |
 <a href="#orientacoes">Orientações</a> |
 <a href="#features">Features</a> |
-<a href="#tecnologia">Tecnologia</a> |
 <a href="#desenvolvedores">Desenvolvedores</a>
 </p>
 
@@ -14,6 +14,13 @@ O projeto **WIRECARD** simula o registro de pagamentos de uma prestadora de serv
 <h2 id="documentação">📃 Documentação do Postman</h2>
 
 - [Postman](https://documenter.getpostman.com/view/20351643/UzXKXKLD)
+
+ <h2 id="tecnologias">🛠 Tecnologias</h2>
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [NodeJS](https://nodejs.org/en/docs/)
+- [Jest](https://jestjs.io/pt-BR/docs/api)
+- [MySql](https://dev.mysql.com/doc/)
 
 <h2 id="orientacoes">🚨 Orientações para Uso</h2>
 
@@ -48,10 +55,10 @@ EndPoint para cadastro de pagamentos à clientes WIRECARD previamente cadastrado
 * Aliexpress - ID: NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD,
 * Pichau -ID: pnVLNKXOcuoltzNzKKbk3Qe8nwIkHt5
 
-#### Exemplos:
+## Exemplos:
 
-1. Requisição de pagamento com cartão de crédito
-```
+#### 1. Requisição de pagamento com cartão de crédito
+~~~JSON
 {
     "clientId": "NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD",
     "buyer_name": "Clark",
@@ -64,17 +71,17 @@ EndPoint para cadastro de pagamentos à clientes WIRECARD previamente cadastrado
     "card_expiration":"/04/2025", 
     "card_CVV":428
 }
-```
-2. Resposta
-```
+~~~
+#### 2. Resposta
+~~~JSON
 {
     "payment_id": "89394e8e-a715-4559-b1f3-173a4b3a0439",
     "payment_Status": "REVERSED"
 }
 
-```
-3. pagamento com boleto
-```
+~~~
+#### 3. pagamento com boleto
+~~~JSON
 {
     "clientId": "NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD",
     "buyer_name": "Lois Lane",
@@ -83,26 +90,26 @@ EndPoint para cadastro de pagamentos à clientes WIRECARD previamente cadastrado
     "amount":450,
     "type" :"boleto"
 }
-```
-4. Resposta
-```
+~~~
+#### 4. Resposta
+~~~JSON
 {
     "payment_id": "55946455-c7e5-4a93-b487-544c16340ae2",
     "number_Boleto": "518502135255547520028857285515474374744865051811"
 }
-```
+~~~
 
 ## 🎙 Status de Pagamento
 Endpoint para consulta do status e informações sobre pagamento. Espera receber o Id e o tipo do pagamento.
-1. Requisição 
-```
+#### 1. Requisição 
+~~~JSON
 {
     "payment_id":"89394e8e-a715-4559-b1f3-173a4b3a0439",
     "payment_Type":"creditcard"
 }
-```
-2. Resposta 
-```
+~~~
+#### 2. Resposta 
+~~~JSON
 {
     "ClientId": "NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD",
     "Client_name": "Aliexpress",
@@ -119,16 +126,18 @@ Endpoint para consulta do status e informações sobre pagamento. Espera receber
     "Amount": 750,
     "Status": "REVERSED"
 }
-```
-3. Requisição
-```
+
+~~~
+
+#### 3. Requisição
+~~~JSON
 {
     "payment_id":"7ba135a6-26c5-4fa2-83ba-e35a076414a5",
     "payment_Type":"boleto"
 }
-```
-4. Resposta
-```
+~~~
+#### 4. Resposta
+~~~JSON
 {
     "ClientId": "NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD",
     "Client_name": "Aliexpress",
@@ -141,16 +150,7 @@ Endpoint para consulta do status e informações sobre pagamento. Espera receber
     "Amount": 450,
     "Status": "PENDENT"
 }
-```
-
- <h2 id="tecnologia">🛠 Tecnologia</h2>
-
-- [TypeScript](https://www.typescriptlang.org/)
-- [NodeJS](https://nodejs.org/en/docs/)
-- [Jest](https://jestjs.io/pt-BR/docs/api)
-- [MySql](https://dev.mysql.com/doc/)
-
-
+~~~
 
 <h2 id="desenvolvedores">👨‍💻 Desenvolvedor</h2>
 <table>         
