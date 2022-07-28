@@ -4,6 +4,7 @@
 <a href="#documentação">Documentação</a> |
 <a href="#orientacoes">Orientações</a> |
 <a href="#features">Features</a> |
+ <a href="#back">Rodando o back-end</a> |
 <a href="#desenvolvedores">Desenvolvedores</a>
 </p>
 
