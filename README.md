@@ -1,9 +1,9 @@
 <p>
 <a href="#sobre">Sobre</a> |
+<a href="#tecnologia">Tecnologia</a> |
 <a href="#documentação">Documentação</a> |
 <a href="#orientacoes">Orientações</a> |
 <a href="#features">Features</a> |
-<a href="#tecnologia">Tecnologia</a> |
 <a href="#desenvolvedores">Desenvolvedores</a>
 </p>
 
@@ -15,9 +15,20 @@ O projeto **WIRECARD** simula o registro de pagamentos de uma prestadora de serv
 
 #### https://wirecard-case-adeir-moreira.herokuapp.com/
 
+ <h2 id="tecnologia">🛠 Tecnologias</h2>
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [NodeJS](https://nodejs.org/en/docs/)
+- [Jest](https://jestjs.io/pt-BR/docs/api)
+- [MySql](https://dev.mysql.com/doc/)
+
 <h2 id="documentação">📃 Documentação do Postman</h2>
 
-- [Postman](https://documenter.getpostman.com/view/20351643/UzXKXKLD)
+- Na documentação você encontra todas informações sobre como usar cada endpoint da API. Você pode clicar em "Run in Postman" para testar os endpoints na versão web do postman.
+- [Documentação](https://documenter.getpostman.com/view/20351643/UzXKXKLD)
+- Você tambem pode usar o arquivo JSON  com os endPonins se tiver o postman instalado na sua máquina.
+- [POSTMAN](https://www.postman.com/downloads/)
+- [WiredCard.postman_collection.json](https://github.com/AdeirMoreira/Projeto-Music-Awards/blob/master/Labenu-Music-Awards-IDP.postman_collection.json)
 
 <h2 id="orientacoes">🚨 Orientações para Uso</h2>
 
@@ -146,14 +157,35 @@ Endpoint para consulta do status e informações sobre pagamento. Espera receber
 }
 ```
 
- <h2 id="tecnologia">🛠 Tecnologias</h2>
+<h2 id="back"> 🎲 Rodando o Back End (servidor)</h2>
 
-- [TypeScript](https://www.typescriptlang.org/)
-- [NodeJS](https://nodejs.org/en/docs/)
-- [Jest](https://jestjs.io/pt-BR/docs/api)
-- [MySql](https://dev.mysql.com/doc/)
+### Pre-Requisitos
 
+- Para rodar o projeto você vai precisar do [Node.JS](https://nodejs.org/en/download/),
+- Uma instancia de um banco de dados MySQL
+- Um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
+### Como instalar e Rodar
+* Para baixar o projeto
+```
+1. git clone https://github.com/AdeirMoreira/Projeto-Music-Awards.git
+2. cd Projeto-Music-Awards
+```
+* Para instalar e rodar o projeto
+```
+3. npm install
+4. npm dev
+    ou
+3. yarn install
+4. yarn dev
+```
+* Para rodar os testes 
+```
+5. npm test
+5. yarn test
+```
+
+Renomeie o arquivo ```.env.example```  para ```.env``` e preencha as variáveis com seus dados do banco de dados MySQL. É muito importante para a execução do servidor.
 
 <h2 id="desenvolvedores">👨‍💻 Desenvolvedor</h2>
 <table>         
