@@ -29,7 +29,7 @@ O projeto **WIRECARD** simula o registro de pagamentos de uma prestadora de serv
 - [Documentação](https://documenter.getpostman.com/view/20351643/UzXKXKLD)
 - Você tambem pode usar o arquivo JSON  com os endPonins se tiver o postman instalado na sua máquina.
 - [POSTMAN](https://www.postman.com/downloads/)
-- [WiredCard.postman_collection.json](https://github.com/AdeirMoreira/Projeto-Music-Awards/blob/master/Labenu-Music-Awards-IDP.postman_collection.json)
+- [WiredCard.postman_collection.json](https://github.com/AdeirMoreira/API-WireCard-Challenge/blob/master/WiredCard.postman_collection.json)
 
 <h2 id="orientacoes">🚨 Orientações para Uso</h2>
 
