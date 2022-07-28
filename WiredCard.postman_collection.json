@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "1d36c2d1-585a-495b-8fd2-1442aebcece6",
+		"name": "WiredCard",
+		"description": "Api de registro e verificação de status de pagamentos por cartão de crédito e boleto à clientes previamente cadastrados identificados pelo ID.\n\n**CLIENTES**\n\n1.  **AMAZON - ID:** 1XT3ywI5kMwJOlkOAgsZTVxbfBOvPHy,\n2.  **Kabum - ID:** a7GEsTYwhcGDcçIDo2rZHlfYxJzfIzg,\n3.  **Casas Bahia - ID:** Jr3PybPdvçIZXHQ5hG3yfKdZcyEwkMÇ,\n4.  **Aliexpress - ID:** NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD,\n5.  **Pichau -ID:** pnVLNKXOcuoltzNzKKbk3Qe8nwIkHt5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20351643"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": \"NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD\",\r\n    \"buyer_name\": \"Clark\",\r\n    \"buyer_email\": \"SuperMan@dc.com\",\r\n    \"buyer_CPF\": \"324.426.782-10\",\r\n    \"amount\":750,\r\n    \"type\" :\"creditcard\",\r\n    \"card_name\":\"Clark Kent\", \r\n    \"card_number\":5522876347347826, \r\n    \"card_expiration\":\"/04/2025\", \r\n    \"card_CVV\":428\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirecard-case-adeir-moreira.herokuapp.com/payment/register",
+					"protocol": "https",
+					"host": [
+						"wirecard-case-adeir-moreira",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"payment",
+						"register"
+					]
+				},
+				"description": "EndPoint de registro de pagamento por boleto ou cartão de credito. Espera receber os seguinte dados:\n\n*   ID do cliente\n*   nome do comprador\n*   e-mail do comprador\n*   CPF do comprador\n*   valor do pagamento\n*   tipo do pagamento (boleto ou creditcard)\n*   nome do titular do cartão de crédito(Se o pagamento for cartão de crédito)\n*   número do cartão de crédito(Se o pagamento for cartão de crédito)\n*   data de expiração do cartão de credito(Se o pagamento for cartão de crédito)\n*   código de verificação do cartão de crédito(Se o pagamento for cartão de crédito)\n    \n\n**Pagamento por Cartão de Crédito**\n\n*   ***Retorna o ID da pagamento e o status.***\n    \n\n`{`\n\n`\"clientId\": \"NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD\",`\n\n`\"buyer_name\": \"Clark\",`\n\n`\"buyer_email\": \"`[`SuperMan@dc.com`](mailto:SuperMan@dc.com)`\",`\n\n`\"buyer_CPF\": \"324.426.782-10\",`\n\n`type : 'creditcard'`\n\n`\"amount\": 750, \"type\": \"creditcard\",`\n\n`\"card_name\": \"Clark Kent\",`\n\n`\"card_number\": 5522876347347826,`\n\n`\"card_expiration\": \"/04/2025\",`\n\n`\"card_CVV\": 428`\n\n`}`\n\n**Pagamento por Boleto**\n\n*   ***Retorna o ID do Pagamento e o número do boleto***\n    \n\n`{`\n\n`StartFragment`\n\n `\"clientId\": \"NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD\",`    \n\n`\"buyer_name\": \"Lois Lane\",`    \n\n`\"buyer_email\": \"Lois@planetadiario.com\",`   \n\n `\"buyer_CPF\": \"428.012.030-76\",`    \n\n`\"amount\":450,`   \n\n `\"type\" :\"boleto\"`\n\n`EndFragment`\n\n`}`"
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD\",\r\n    \"buyer_name\": \"Clark\",\r\n    \"buyer_email\": \"SuperMan@dc.com\",\r\n    \"buyer_CPF\": \"324.426.782-10\",\r\n    \"amount\":750,\r\n    \"type\" :\"creditcard\",\r\n    \"card_name\":\"Clark Kent\", \r\n    \"card_number\":5522876347347826, \r\n    \"card_expiration\":\"/04/2025\", \r\n    \"card_CVV\":428\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wirecard-case-adeir-moreira.herokuapp.com/payment/register",
+							"protocol": "https",
+							"host": [
+								"wirecard-case-adeir-moreira",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"payment",
+								"register"
+							]
+						}
+					},
+					"status": "Payment successfully registered",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"51-+Zbhw8KdurrILb5mDC25buHkUrE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Jul 2022 22:07:03 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"payment_id\": \"89394e8e-a715-4559-b1f3-173a4b3a0439\",\n    \"payment_Status\": \"REVERSED\"\n}"
+				},
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD\",\r\n    \"buyer_name\": \"Lois Lane\",\r\n    \"buyer_email\": \"Lois@planetadiario.com\",\r\n    \"buyer_CPF\": \"428.012.030-76\",\r\n    \"amount\":450,\r\n    \"type\" :\"boleto\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wirecard-case-adeir-moreira.herokuapp.com/payment/register",
+							"protocol": "https",
+							"host": [
+								"wirecard-case-adeir-moreira",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"payment",
+								"register"
+							]
+						}
+					},
+					"status": "Payment successfully registered",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "120"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"78-BHlr7lClfFUmcus3tDRr5KmjH6A\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Jul 2022 15:00:58 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"payment_id\": \"7ba135a6-26c5-4fa2-83ba-e35a076414a5\",\n    \"number_Boleto\": \"770565103656132433640302616661428461234374301035\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"payment_id\":\"b71abd6a-720c-4a15-9c3a-3f6e46145b0d\",\r\n    \"payment_Type\":\"boleto\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirecard-case-adeir-moreira.herokuapp.com/payment/status",
+					"protocol": "https",
+					"host": [
+						"wirecard-case-adeir-moreira",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"payment",
+						"status"
+					]
+				},
+				"description": "Endpoint para consulta do status e informações sobre pagamento. Espera receber o Id e o tipo do pagamento."
+			},
+			"response": [
+				{
+					"name": "Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment_id\":\"89394e8e-a715-4559-b1f3-173a4b3a0439\",\r\n    \"payment_Type\":\"creditcard\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wirecard-case-adeir-moreira.herokuapp.com/payment/status",
+							"protocol": "https",
+							"host": [
+								"wirecard-case-adeir-moreira",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"payment",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "469"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1d5-4+6VOk2DREB6muiR8gZVotk39K0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Jul 2022 15:01:56 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ClientId\": \"NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD\",\n    \"Client_name\": \"Aliexpress\",\n    \"Buyer_Id\": \"c754e33d-7dab-4e8c-ae48-565f208e6366\",\n    \"Buyer_name\": \"Clark\",\n    \"Buyer_email\": \"SuperMan@dc.com\",\n    \"Buyer_CPF\": \"324.426.782-10\",\n    \"PaymentId\": \"89394e8e-a715-4559-b1f3-173a4b3a0439\",\n    \"CreditCard_id\": \"d9ee9c46-1fbd-4bdb-8b91-1d866d3fabab\",\n    \"CreditCard_name\": \"Clark Kent\",\n    \"Creditcard_number\": 5522876347347826,\n    \"creditCard_expiration\": \"/04/2025\",\n    \"Creditcard_CVV\": 428,\n    \"Amount\": 750,\n    \"Status\": \"REVERSED\"\n}"
+				},
+				{
+					"name": "Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment_id\":\"7ba135a6-26c5-4fa2-83ba-e35a076414a5\",\r\n    \"payment_Type\":\"boleto\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wirecard-case-adeir-moreira.herokuapp.com/payment/status",
+							"protocol": "https",
+							"host": [
+								"wirecard-case-adeir-moreira",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"payment",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "367"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"16f-f5QE1p80P780yXgVdWKL2TCqUMg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Jul 2022 15:02:31 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ClientId\": \"NNWdW246HQsp5bxU5QX7vAb1fcrT5ÇD\",\n    \"Client_name\": \"Aliexpress\",\n    \"Buyer_Id\": \"1f1bc664-e1af-4be3-bc82-687f2adf5dc7\",\n    \"Buyer_name\": \"Lois Lane\",\n    \"Buyer_email\": \"Lois@planetadiario.com\",\n    \"Buyer_CPF\": \"428.012.030-76\",\n    \"PaymentId\": \"7ba135a6-26c5-4fa2-83ba-e35a076414a5\",\n    \"Boleto_number\": \"770565103656132433640302616661428461234374301035\",\n    \"Amount\": 450,\n    \"Status\": \"PENDENT\"\n}"
+				}
+			]
+		}
+	]
+}
