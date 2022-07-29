@@ -169,7 +169,7 @@ Endpoint para consulta do status e informações sobre pagamento. Espera receber
 ### Como instalar e Rodar
 * Para baixar o projeto
 ```
-1. git clone https://github.com/AdeirMoreira/Projeto-Music-Awards.git
+1. git clone https://github.com/AdeirMoreira/API-WireCard-Challenge.git
 2. cd Projeto-Music-Awards
 ```
 * Para instalar e rodar o projeto
